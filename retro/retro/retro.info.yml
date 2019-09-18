@@ -1,0 +1,6 @@
+name: retro
+type: theme
+description: An amazing Retro theme
+package: Other
+core: 8.x
+base theme: bartik

@@ -1,0 +1,14 @@
+
+// use Drupal\Core\Routing\RouteMatch;
+
+function themename_preprocess_block__sitemap(&$variables) {
+  $menu_name = "main";
+  $menu_tree = \Drupal::service('menu.link_tree');
+
+  $parameters = new \Drupal\Core\Menu\MenuTreeParameters();
+  $parameters
+    ->setMaxDepth(9);
+  $tree = $menu_tree->load($menu_name, $parameters);
+  $menu = $menu_tree->build($tree);
+  $variables['sitemap'] = $menu;
+}
